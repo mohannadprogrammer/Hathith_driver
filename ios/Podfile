@@ -8,6 +8,14 @@ target 'hathithDriver' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
+
+  pod 'react-native-maps', :path => '../node_modules/react-native-maps'
+
   target 'hathithDriverTests' do
     inherit! :complete
     # Pods for testing
