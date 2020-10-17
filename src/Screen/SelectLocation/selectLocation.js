@@ -15,8 +15,8 @@ export default class SelectLocation extends Component {
     }
     render() {
         return (
-            <View>
-                <Header name="تحديد الموقع" />
+            <View style={{ flex: 1 }}>
+                <Header name="طلب" />
 
                 <MapView
                     style={{
@@ -62,22 +62,39 @@ export default class SelectLocation extends Component {
 
                 <View style={{
                     position: "absolute",
-                    // flex: 1,
-                    // flexDirection: 'row',
-                    width: "100%",
-                    // height: "30%",
+                    flex: 1,
+                    alignSelf: "center",
+                    width: Dimensions.get("screen").width - 20,
                     backgroundColor: "#FFF",
                     bottom: 10,
+                    borderColor: colors.light_blue,
+                    borderWidth: 2,
+                    borderRadius: 10,
                     padding: 20,
                 }}>
-                    <TextInput style={{
-                        borderWidth: 2,
-                        borderRadius: 20,
-                        borderColor: colors.main
-                    }}
-                        placeholder="رقم|البناية|المعالم الواضحة"
+                    <View style={{ flexDirection: "row", flex: 1 }}>
+                        <TextInput style={{
+                            flex: 1,
+                            borderWidth: 2,
+                            margin: 10,
+                            borderRadius: 10,
+                            borderColor: colors.light_gray
+                        }}
+                            placeholder="السعر "
 
-                    />
+                        />
+                        <TextInput style={{
+                            flex: 1,
+                            margin: 10,
+                            borderWidth: 2,
+                            borderRadius: 10,
+                            borderColor: colors.light_gray
+                        }}
+                            placeholder="الزمن بالدقايق "
+
+                        />
+                    </View>
+
                     <TouchableOpacity style={styles.detailsButton}
                         onPress={() => {
                             this.props.navigation.navigate("Bill")
@@ -86,7 +103,7 @@ export default class SelectLocation extends Component {
 
 
                         {/* <Icon name="checklist" type="Octicons" style={{ color: colors.white, paddingher: 10 }} /> */}
-                        <Text style={styles.text}>تحديد</Text>
+                        <Text style={styles.text}>تقديم العرض</Text>
 
                     </TouchableOpacity>
 

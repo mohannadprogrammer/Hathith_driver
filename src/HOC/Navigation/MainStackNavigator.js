@@ -2,16 +2,27 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
-
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import Screen from '../../Screen/index'
 import Icons from '../../Assets/Icons';
 import colors from '../../Assets/colors'
-
+import Header from '../../Components/Header/Header'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator();
+const TopTab = createMaterialTopTabNavigator();
+function OrdersType() {
+  return (
+    <TopTab.Navigator
 
+    >
+      {/* <Header name="lskd" /> */}
+      <TopTab.Screen name="الطلبات المرفوضة" component={Screen.Orders} />
+      <TopTab.Screen name="الطلبات المنفذة" component={Screen.Orders} />
+    </TopTab.Navigator>
+  )
+}
 function Main() {
   return (
     <Tab.Navigator
@@ -40,9 +51,9 @@ function Main() {
     >
       <Tab.Screen name="الرئسية" component={Screen.Home} options={{ tabBarBadge: 3 }} />
 
-      <Tab.Screen name="الطلبات" component={Screen.Orders} />
+      <Tab.Screen name="الطلبات" component={OrdersType} />
 
-      <Tab.Screen name="التنبيهات" component={Screen.Notification} options={{ tabBarBadge: 3 }} />
+      {/* <Tab.Screen name="التنبيهات" component={Screen.Notification} options={{ tabBarBadge: 3 }} /> */}
     </Tab.Navigator>
   )
 }

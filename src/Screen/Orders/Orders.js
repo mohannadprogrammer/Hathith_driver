@@ -8,7 +8,7 @@ export default class Orders extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Header name="الطلبات" />
+                {/* <Header name="الطلبات" /> */}
                 <View style={styles.container}>
                     <FlatList
                         data={[{ tile: "alsdf", key: "1" }, { key: "2" }]}
