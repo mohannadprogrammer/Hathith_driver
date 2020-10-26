@@ -1,15 +1,33 @@
-import React, { Component } from 'react';
-import PhoneInput from "react-native-phone-number-input";
-import { StyleSheet, View, Text, TouchableOpacity, Image, TextInput, Button } from 'react-native'
+import React, { Component, useState, useRef, useEffect } from 'react';
+import {
+    StyleSheet, ActivityIndicator, View, Text, TouchableOpacity, Image, TextInput,
+    Button,
+
+} from 'react-native'
 import LoginHOC from '../../HOC/LoginHOC/LoginHoc'
+
+
 class Login extends Component {
+
+    state = {
+        phone: "",
+        disable: true
+    };
+
+
+
+    onPhoneChange = phone => {
+        this.setState({ phone });
+    };
+
     render() {
 
-        // const [value, onChangeText] = React.useState('ادخل رقم الجوال');
-        const { navigation } = this.props
+        const { navigation } = this.props.navigation
+
         return (
             <LoginHOC
                 step={1}
+                loaging={false}
                 footer={() => (
                     <View>
                         <View style={styles.footer}>
@@ -20,18 +38,41 @@ class Login extends Component {
                                     borderColor: colors.light_gray,
                                     borderWidth: 1,
 
+
                                 }}
-                            // onChangeText={text => onChangeText(text)}
-                            // value={"value"}
+                                value={this.state.username}
+                                placeholder="أخل رقم الجوال"
+                                keyboardType="numeric"
+                                onChangeText={text => {
+                                    this.setState({
+                                        phone: text,
+                                        disable: false
+                                    })
 
+                                }}
                             />
-
+                            {
+                                this.state.phone.length !== 10 || this.state.phone === "" ?
+                                    <Text style={{ color: colors.danger, alignSelf: "center", fontSize: 12 }}>
+                                        رقم الهاتف يجب ان يتكون من 10 خانات
+                                    </Text> : null
+                            }
+                            <TouchableOpacity
+                                style={styles.buttonContainer}
+                                onPress={() => this.props.navigation.navigate("main")}>
+                                <Text style={styles.title}>تخطي</Text>
+                            </TouchableOpacity>
 
                         </View>
                         <View style={styles.submit} >
                             <TouchableOpacity
-                                onPress={() => navigation.navigate('Check')}
-                                style={styles.botton}
+                                onPress={() => {
+                                    // alert(this.state.ph);
+                                    this.props.navigation.navigate("Check", { phone: this.state.phone });
+                                }}
+                                style={[styles.botton, this.state.disable ? { backgroundColor: colors.main, opacity: 0.7 } : null]}
+                                disabled={this.state.disable}
+
                             >
 
                                 <Text style={{ color: "#FFFF", fontSize: 24 }}>تأكيد</Text>
@@ -45,13 +86,9 @@ class Login extends Component {
                                 <Text style={{ textAlign: "center", color: colors.main, fontSize: 12 }}>استخدامك لهاذا التطبيق يعني موافقتك على سياسة و شروط الاستخدام</Text>
                             </View>
                         </View>
-                    </View>
+                    </ View>
 
                 )}
-
-            // submit={() => (
-
-            // )}
             >
 
             </LoginHOC>
