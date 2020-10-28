@@ -34,6 +34,29 @@ export default class personal extends Component {
                         <Text style={{ color: colors.main }}>5 </Text>
                     </View>
                 </View>
+                <View style={{
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: 10,
+                    backgroundColor: colors.light_gray,
+                    flexDirection: 'row'
+                }}>
+
+                    <Text style={{
+                        color: colors.danger,
+                    }}>Develop by </Text>
+                    <Text style={{ color: colors.blue }}>Pinnecal</Text>
+                    <Image
+                        style={{
+                            // flex: 1,
+                            height: 20,
+                            width: 20,
+                            // backgroundColor: 'red',
+                            // margin: 6
+                        }}
+                        source={require('../../Assets/images/pincal.svg')}
+                    />
+                </View>
             </View >
         )
     }

@@ -82,7 +82,7 @@ function MainStackNavigator() {
         animationTypeForReplace="pop"
       >
         {/* <Stack.Screen name='login' component={Screen.Login} /> */}
-        <Stack.Screen name="main" component={PersonalDrawer} />
+        {/* <Stack.Screen name="main" component={PersonalDrawer} /> */}
         <Stack.Screen name="Location" component={Screen.SelectLocation} />
         <Stack.Screen name='Check'
           component={Screen.Verification}
