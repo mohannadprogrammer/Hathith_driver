@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
 import Screen from '../../Screen/index'
 import Icons from '../../Assets/Icons';
@@ -10,6 +11,7 @@ import colors from '../../Assets/colors'
 import Header from '../../Components/Header/Header'
 
 const Stack = createStackNavigator()
+const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
 const TopTab = createMaterialTopTabNavigator();
 function OrdersType() {
@@ -57,6 +59,21 @@ function Main() {
     </Tab.Navigator>
   )
 }
+
+function PersonalDrawer() {
+  return (
+    <Drawer.Navigator
+      drawerPosition="right"
+      drawerContent={(props) => (
+        <Screen.Personal {...props} />
+      )}
+
+    >
+      {/* <Header name="lskd" /> */}
+      <Drawer.Screen name="home" component={Main} />
+    </Drawer.Navigator>
+  )
+}
 function MainStackNavigator() {
   return (
     <NavigationContainer>
@@ -64,8 +81,8 @@ function MainStackNavigator() {
         headerMode="none"
         animationTypeForReplace="pop"
       >
-        <Stack.Screen name='login' component={Screen.Login} />
-        <Stack.Screen name="main" component={Main} />
+        {/* <Stack.Screen name='login' component={Screen.Login} /> */}
+        <Stack.Screen name="main" component={PersonalDrawer} />
         <Stack.Screen name="Location" component={Screen.SelectLocation} />
         <Stack.Screen name='Check'
           component={Screen.Verification}

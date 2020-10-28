@@ -16,7 +16,7 @@ export default class personal extends Component {
                             style={styles.image}
                             source={require('../../Assets/images/logo.png')}
                         />
-                        <View style={{ height: 40, width: 40, borderRadius: 40, backgroundColor: colors.gray, position: 'absolute', right: 20, bottom: 0 }}>
+                        <View style={{ height: 30, width: 30, borderRadius: 40, backgroundColor: colors.gray, position: 'absolute', right: 20, bottom: 0 }}>
 
                         </View>
 
@@ -40,7 +40,7 @@ export default class personal extends Component {
 }
 const styles = StyleSheet.create({
     container: {
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         padding: 30,
         backgroundColor: "#FFF",
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     },
     image: {
         resizeMode: "cover",
-        width: 200,
-        height: 200,
+        width: 150,
+        height: 150,
         borderRadius: 600,
         borderWidth: 2,
         borderColor: colors.light_gray

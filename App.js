@@ -13,9 +13,7 @@ export default class App extends Component {
 
   render() {
     return (
-      // <View>
-      //   <Text>mohannad</Text>
-      // </View>
+
       <StateProvider>
         <MainStackNavigator />
 
