@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
 
-const dataInitialState = {}
+const dataInitialState = {
+    user: "mohannad"
+}
 export const data = (state = dataInitialState, action) => {
     switch (action.type) {
 

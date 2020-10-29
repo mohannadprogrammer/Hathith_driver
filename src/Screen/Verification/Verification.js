@@ -56,7 +56,7 @@ class Verification extends Component {
               {
                 index: 1,
                 routes: [
-                  { name: 'Profile' },
+                  { name: 'main' },
 
                 ],
               }

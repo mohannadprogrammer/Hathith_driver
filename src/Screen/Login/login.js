@@ -5,7 +5,7 @@ import {
 
 } from 'react-native'
 import LoginHOC from '../../HOC/LoginHOC/LoginHoc'
-
+import { connect } from 'react-redux'
 
 class Login extends Component {
 
@@ -21,6 +21,7 @@ class Login extends Component {
     };
 
     render() {
+        // console.log("login", this.props.route);
 
         const { navigation } = this.props.navigation
 
@@ -138,5 +139,12 @@ const styles = StyleSheet.create({
 
 
 })
+const mapStateToProps = (state) => ({
 
-export default Login
+})
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
