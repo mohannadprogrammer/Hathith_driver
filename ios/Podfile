@@ -18,6 +18,10 @@ target 'hathithDriver' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  pod 'RNFBApp', :path => '../node_modules/@react-native-firebase/app'
+
+  pod 'RNFBMessaging', :path => '../node_modules/@react-native-firebase/messaging'
+
   target 'hathithDriverTests' do
     inherit! :complete
     # Pods for testing

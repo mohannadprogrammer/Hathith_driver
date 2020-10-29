@@ -25,6 +25,8 @@
     "react-native-gesture-handler": "^1.8.0",
     "react-native-i18n": "^2.0.15",
     "react-native-maps": "^0.27.1",
+    "@react-native-firebase/app": "^8.4.6",
+    "@react-native-firebase/messaging": "^7.9.1",
     "react-native-paper": "^4.1.0",
     "react-native-phone-number-input": "^1.0.4",
     "react-native-reanimated": "^1.13.0",

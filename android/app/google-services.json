@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "620866824299",
+    "firebase_url": "https://hathith-9fa8f.firebaseio.com",
+    "project_id": "hathith-9fa8f",
+    "storage_bucket": "hathith-9fa8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620866824299:android:9d2d2717fb236e4cf6a92e",
+        "android_client_info": {
+          "package_name": "com.hathithdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620866824299-b391vfhbqmdep5gckn1rcogvdq8j5v35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ99HN6ChOmlELFclU9f9VYZ9qG107NSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620866824299-b391vfhbqmdep5gckn1rcogvdq8j5v35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
